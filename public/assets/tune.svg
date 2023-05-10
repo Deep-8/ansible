@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="tune" opacity="0.5">
+    <path id="Vector" d="M0,0H24V24H0Z" fill="none"/>
+    <path id="Vector-2" data-name="Vector" d="M0,10.889v1.556H4.667V10.889ZM0,1.556V3.111H7.778V1.556ZM7.778,14V12.444H14V10.889H7.778V9.333H6.222V14ZM3.111,4.667V6.222H0V7.778H3.111V9.333H4.667V4.667ZM14,7.778V6.222H6.222V7.778ZM9.333,4.667h1.556V3.111H14V1.556H10.889V0H9.333Z" transform="translate(5 5)" fill="#323232"/>
+  </g>
+</svg>
