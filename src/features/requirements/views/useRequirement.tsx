@@ -33,7 +33,6 @@ import useAddRequirement from "./add/views/useAddRequirement";
 import { toast } from "react-toastify";
 import { getAllUsers } from "@/services/user";
 import { dateGenerator } from "@/utils/date";
-import { IUserPayload } from "@/interfaces/user";
 
 const getStatusText: any = {
   0: {
@@ -275,7 +274,6 @@ const columns = [
           <div
             className="cursor-pointer"
             onClick={() => {
-              // todo:
               record.showDeleteModal(record.id);
             }}
           >
@@ -455,11 +453,10 @@ const useRequirement = () => {
   const { data: allUsers, isFetching: usersLoading } = useQuery({
     queryKey: ["allusers", debouncedUsersQuery],
     queryFn: () => {
-      const usersPayload: IUserPayload = {
+      const usersPayload: ISkillsPayload = {
         params: {
           paginate: false,
           q: debouncedUsersQuery,
-          status: 1,
         },
       };
       return getAllUsers(usersPayload);

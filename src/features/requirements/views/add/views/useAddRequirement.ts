@@ -107,7 +107,6 @@ const useAddRequirement = ({
         params: {
           q: debouncedAssignedToQuery,
           paginate: false,
-          status: 1,
         },
       };
       return getAllUsers(userPayload);

@@ -365,7 +365,7 @@ const useProfiles = () => {
   const debouncedQuery = useDebounce(q);
   const [isSendProfileModalOpen, setIsSendProfileModalOpen] = useState(false);
   const [slider, setSlider] = useState<any>([0, 100]);
-  const [sliderCost, setSliderCost] = useState<any>([0, 20000000]);
+  const [sliderCost, setSliderCost] = useState<any>([0, 100]);
   const [isSliderSet, setIsSliderSet] = useState<boolean>(false);
   const [isCostSliderSet, setIsCostSliderSet] = useState<boolean>(false);
   const [isFilled, setIsFilled] = useState<boolean>(false);
@@ -714,7 +714,6 @@ const useProfiles = () => {
     isLoading: loadingProfileDelete,
   } = useMutation(() => deleteProfile(idToDeleteProfile!), {
     onSuccess: (data) => {
-      setSelectedRow([]);
       setIdToDeleteProfile("");
       setIsDeleteProfileModalOpen(false);
       toast.success(data.message);

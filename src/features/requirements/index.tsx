@@ -180,7 +180,7 @@ const Requirements = () => {
                   </div>
 
                   {/* budget filter */}
-                  <div className="flex justify-between">
+                  {/* <div className="flex justify-between">
                     <p>
                       Budget{" "}
                       <span className="text-main">
@@ -201,7 +201,6 @@ const Requirements = () => {
 
                   <Slider
                     max={20000000}
-                    step={10000}
                     onAfterChange={(budgetRange) => {
                       setIsBudgetSliderSet(true);
                       handleChangeBudgetRange(budgetRange);
@@ -214,7 +213,7 @@ const Requirements = () => {
                     onChange={(value) => setSliderBudget(value)}
                     value={sliderBudget}
                     defaultValue={[0, 100]}
-                  />
+                  /> */}
 
                   <div>
                     <label htmlFor="">Select Skills</label>

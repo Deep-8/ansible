@@ -138,7 +138,9 @@ const useLocation = () => {
         refetchAllLocation();
       }
     },
-    onError: (err) => {},
+    onError: (err) => {
+      console.log("err on", err);
+    },
   });
 
   // edit skills

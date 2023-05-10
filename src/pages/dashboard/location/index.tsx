@@ -3,7 +3,6 @@ import MainLayout from "@/components/mainLayout";
 import React from "react";
 import Dashboard from "..";
 import Location from "@/features/location";
-import { accessFunction } from "@/utils/accessFunction";
 
 const location = () => {
   return (
@@ -20,7 +19,3 @@ const location = () => {
 };
 
 export default location;
-
-export async function getServerSideProps(context: any) {
-  return accessFunction(context);
-}

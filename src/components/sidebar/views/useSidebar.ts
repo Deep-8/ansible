@@ -1,14 +1,12 @@
-import { sidebarElements } from "@/constants/sidebarItems";
+import { sidebarItems } from "@/constants/sidebarItems";
 import { useSideBarContext, useSideBarUpdateContext } from "@/context/sidebar";
-import { getCookie } from "@/utils/cookies";
 import useWindowSize, { Size } from "@/utils/useWindowSize";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const useSidebar = () => {
   const router = useRouter();
-  const role = getCookie("role");
-  const items = sidebarElements();
+  const items = sidebarItems;
   const [current, setCurrent] = useState("companies");
   const isSidebarOpen = useSideBarContext();
   const setIsSidebarOpen = useSideBarUpdateContext(isSidebarOpen);
@@ -33,14 +31,7 @@ const useSidebar = () => {
     if (router.pathname.includes("location")) setCurrent("location");
     if (router.pathname.includes("user")) setCurrent("user");
   }, [router.pathname]);
-  return {
-    items,
-    current,
-    isSidebarOpen,
-    setIsSidebarOpen,
-    onClickSidebar,
-    role,
-  };
+  return { items, current, isSidebarOpen, setIsSidebarOpen, onClickSidebar };
 };
 
 export default useSidebar;

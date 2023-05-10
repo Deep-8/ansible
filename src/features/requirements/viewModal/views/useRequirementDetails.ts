@@ -19,7 +19,7 @@ const useRequirementDetails = () => {
         retry: 1,
       }
     );
-
+  console.log("**", requirementDetails);
   const getDetails = (requirementDetails: any) => {
     const details = requirementDetails?.data?.data;
     const createdDate = dateGenerator(details?.createdAt);

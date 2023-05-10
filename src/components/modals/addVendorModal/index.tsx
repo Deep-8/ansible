@@ -1,9 +1,8 @@
-import tagRender from "@/components/tagRenderer";
 import { ICompany } from "@/interfaces/company";
-import { Button, Col, Form, Input, Modal, Row, Select, Spin } from "antd";
+import { Button, Col, Form, Input, Modal, Row, Spin } from "antd";
 import React, { FC, useEffect } from "react";
 import useAddVendorModal from "./views/useAddVendorModal";
-const Option = Select.Option;
+
 interface IAddVendor {
   initialValues: ICompany;
   editModeOn: string;
@@ -30,11 +29,6 @@ const AddVendor: FC<IAddVendor> = ({
     addLoading,
     setIsFilled,
     handleModalClose,
-    allLocation,
-    memoizedOnLocationSearch,
-    memoizedOnSkillsSearch,
-    skillsLoading,
-    allSkills,
   } = useAddVendorModal(initialValues, editModeOn, onClose, refetchAllVendors);
 
   useEffect(() => {
@@ -112,7 +106,9 @@ const AddVendor: FC<IAddVendor> = ({
                 <Input placeholder="Enter Contact Person's name" allowClear />
               </Form.Item>
             </Col>
+          </Row>
 
+          <Row gutter={30}>
             <Col xs={24} md={12}>
               <Form.Item
                 name="email"
@@ -148,70 +144,6 @@ const AddVendor: FC<IAddVendor> = ({
                 <Input placeholder="Enter Mobile Number" allowClear />
               </Form.Item>
             </Col>
-            {/* <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-              <Form.Item
-                name="locations"
-                label={
-                  <span className=" text-grey text-base mb-2">
-                    Location / Remote
-                  </span>
-                }
-              >
-                <Select
-                  showSearch
-                  showArrow
-                  allowClear
-                  // value={filters.teacher_ids}
-                  mode="multiple"
-                  tagRender={tagRender}
-                  style={{ width: "100%" }}
-                  placeholder="Select location"
-                  filterOption={false}
-                  onSearch={memoizedOnLocationSearch}
-                  onChange={() => memoizedOnLocationSearch("")}
-                  // onChange={onSelect}
-                  notFoundContent={"no search result"}
-                >
-                  {allLocation?.map((each: any) => (
-                    <Option key={each.id} value={each.id}>
-                      {each.name}
-                    </Option>
-                  ))}
-                </Select>
-              </Form.Item>
-            </Col> */}
-            {/* <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-              <Form.Item
-                name="skills"
-                label={
-                  <span className=" text-grey text-base mb-2">Skills</span>
-                }
-              >
-                <Select
-                  maxTagCount="responsive"
-                  showSearch
-                  showArrow
-                  allowClear={true}
-                  // value={skillsQuery}
-                  mode="multiple"
-                  tagRender={tagRender}
-                  style={{ width: "100%", height: "40px" }}
-                  placeholder="Select skills"
-                  filterOption={false}
-                  loading={skillsLoading}
-                  onSearch={memoizedOnSkillsSearch}
-                  onChange={() => memoizedOnSkillsSearch("")}
-                  // onChange={this.onSelect}
-                  notFoundContent={"no search result"}
-                >
-                  {allSkills?.data?.map((each: any) => (
-                    <Option key={each.id} value={each.id}>
-                      {each.name}
-                    </Option>
-                  ))}
-                </Select>
-              </Form.Item>
-            </Col> */}
           </Row>
           <Row className="flex justify-center">
             <Col xs={8} md={4} lg={4}>

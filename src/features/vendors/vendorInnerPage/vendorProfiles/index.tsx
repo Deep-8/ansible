@@ -14,7 +14,13 @@ import VendorCard from "../vendorCard";
 import useVendorInnerPage from "../views/useVendorInnerPage";
 
 const VendorProfiles = () => {
-  const { vendorId } = useVendorInnerPage();
+  const {
+    companyDatatype,
+    vendorListLoading,
+    listingData,
+    setPageNumber,
+    vendorId,
+  } = useVendorInnerPage();
   const { refetchAllVendors } = useVendors();
   const {
     allProfiles,

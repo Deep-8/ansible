@@ -1,7 +1,7 @@
 import { months } from "@/constants/months";
 
 export const dateGenerator = (date: Date) => {
-  const updateDate = new Date(`${date}`.replace(/-/g, "/").replace(/T.+/, ""));
+  const updateDate = new Date(date);
   const dt = updateDate.getDate();
   const mon = updateDate.getMonth();
   const year = updateDate.getFullYear();
@@ -10,7 +10,8 @@ export const dateGenerator = (date: Date) => {
   return newDate;
 };
 
-export const capitalize = (word: string) => {
+
+export const capitalize=(word:string)=> {
   const lower = word.toLowerCase();
   return word.charAt(0).toUpperCase() + lower.slice(1);
-};
+}

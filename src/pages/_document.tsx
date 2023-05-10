@@ -22,6 +22,7 @@ export default function Document() {
           </>
         )}
       </Head>
+      <script src="https://accounts.google.com/gsi/client" defer></script>
 
       <body>
         <Main />

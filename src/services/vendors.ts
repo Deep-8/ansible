@@ -1,16 +1,16 @@
 import { ApiConstants } from "@/constants/apiConstants";
 import { IPayloadAddCompany } from "@/interfaces/company";
-import { IVendorPayload } from "@/interfaces/vendor";
 import { axiosInstance } from "@/utils/interceptor";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Router from "next/router";
 import { toast } from "react-toastify";
 
-export const getAllVendors = (payload: IVendorPayload) => {
-  return axiosInstance.get(ApiConstants.GETALLVENDORS, payload).then((res) => {
-    if (res.status == 200) {
-      return res.data;
-    }
+export const getAllVendors = (page: number = 1) => {
+  return axiosInstance.get(ApiConstants.GETALLVENDORS, {
+    params: {
+      include: "contacts",
+      page: page,
+    },
   });
 };
 export const getAllVendorsWithFilters = (payload: any) => {

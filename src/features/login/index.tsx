@@ -1,17 +1,17 @@
+import { axiosInstance } from "@/utils/interceptor";
 import { Spin } from "antd";
-import { useSession, signIn } from "next-auth/react";
+import axios from "axios";
 import Image from "next/image";
+import Router, { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import Companies from "../companies";
 import useLogin from "./views/useLogin";
 
 const Login = () => {
-  const { data: session, status } = useSession();
-  const {} = useLogin(session, status);
+  const { isLoading } = useLogin();
 
   return (
     <>
-      {status !== "loading" ? (
+      <Spin spinning={isLoading}>
         <div className="container gradientbg">
           <>
             <div className="flex flex-wrap lg:mx-0 mx-4 gap-24 justify-center items-center pt-40">
@@ -35,10 +35,7 @@ const Login = () => {
                   Login to <span className="text-main">Compass</span>
                 </div>
                 <button
-                  onClick={(event) => {
-                    event.preventDefault();
-                    signIn("google");
-                  }}
+                  id="glogin"
                   className=" flex items-center justify-center rounded-lg border-main border-2 mt-9"
                 >
                   <Image
@@ -53,11 +50,7 @@ const Login = () => {
             </div>
           </>
         </div>
-      ) : (
-        <div className="h-screen w-screen bg-white flex justify-center items-center">
-          <Spin />
-        </div>
-      )}
+      </Spin>
     </>
   );
 };

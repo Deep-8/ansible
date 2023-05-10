@@ -12,8 +12,6 @@ export interface ICompanyTable {
 export interface IPayloadAddCompany {
   name: string;
   contacts: IContacts[];
-  locations?: string;
-  skills?: string;
 }
 export interface ICompanyRequirementsCommon {
   id: string;
@@ -46,12 +44,12 @@ export interface ICompany {
   mobile: string;
 }
 
-interface params {
-  include?: string;
-  page?: Number;
-  paginate?: boolean;
-  q?: string;
+interface params{
+  include?: string,
+  page?: Number,
+  paginate?: boolean,
+  q?: string
 }
 export interface IgetAllCompaniesPayload {
-  params: params;
+  params: params,
 }

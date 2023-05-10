@@ -159,13 +159,11 @@ const AddEditProfile = ({
               allowClear={true}
               showSearch
               showArrow
-              disabled={
-                initialValues?.id || initialValues.vendorId ? true : false
-              }
+              disabled={initialValues?.id ? true : false}
               style={{ width: "100%", height: "40px" }}
               placeholder="Select vendor"
               filterOption={false}
-              onFocus={() => {}}
+              onFocus={() => { }}
               onSearch={memoizedOnVendorSearch}
               notFoundContent={"no search result"}
             >
@@ -428,6 +426,7 @@ const AddEditProfile = ({
           </Col>
         ) : (
           <Fragment>
+
             {/* keySkills */}
             <Col className="mt-4" span={24}>
               <Form.Item

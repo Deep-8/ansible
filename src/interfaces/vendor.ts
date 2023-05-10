@@ -1,5 +1,3 @@
-import { string } from "yup";
-
 export interface IVendorTable {
   id: string;
   name: string;
@@ -25,18 +23,4 @@ export interface IVendor {
   name: string;
   isRemote?: number;
   createdAt: Date;
-}
-
-export interface IVendorFilter {
-  page: number | undefined;
-  skills: string;
-  locations: string;
-}
-
-export interface IVendorPayload {
-  params: {
-    include: string;
-    // page: number,
-    q: string;
-  };
 }

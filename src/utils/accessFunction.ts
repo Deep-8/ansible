@@ -31,20 +31,3 @@ export const loginAccessFunction = (context: any) => {
     };
   }
 };
-
-export const userAccessFunction = (context: any) => {
-  const cookies = context.req.cookies;
-  const role = cookies.role;
-  if (role === "1") {
-    return {
-      props: {},
-    };
-  } else {
-    return {
-      redirect: {
-        destination: "/dashboard/companies",
-        permanent: false,
-      },
-    };
-  }
-};

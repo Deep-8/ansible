@@ -134,7 +134,9 @@ const useSkills = () => {
         refetchAllSkills();
       }
     },
-    onError: (err) => {},
+    onError: (err) => {
+      console.log("err on", err);
+    },
   });
 
   // edit skills
@@ -154,7 +156,9 @@ const useSkills = () => {
         refetchAllSkills();
       }
     },
-    onError: (err) => {},
+    onError: (err) => {
+      console.log("err on", err);
+    },
   });
   const handleAddSkill = (values: IinitialValue) => {
     if (showModal) {

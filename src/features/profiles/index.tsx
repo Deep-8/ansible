@@ -108,7 +108,7 @@ const Profiles = () => {
                     />
 
                     {/* cost filter */}
-                    <div className="flex justify-between">
+                    {/* <div className="flex justify-between">
                       <p>
                         Cost{" "}
                         <span className="text-main">
@@ -120,16 +120,14 @@ const Profiles = () => {
                           className="mt-1 mr-1"
                           onClick={() => {
                             setIsCostSliderSet(false);
-                            handleChangeCostRange([0, 20000000], false);
-                            setSliderCost([0, 20000000]);
+                            handleChangeCostRange([0, 100], false);
+                            setSliderCost([0, 100]);
                           }}
                         />
                       )}
                     </div>
 
                     <Slider
-                      max={20000000}
-                      step={10000}
                       onAfterChange={(costRange) => {
                         setIsCostSliderSet(true);
                         handleChangeCostRange(costRange);
@@ -141,8 +139,8 @@ const Profiles = () => {
                       range
                       onChange={(value) => setSliderCost(value)}
                       value={sliderCost}
-                      defaultValue={[0, 20000000]}
-                    />
+                      defaultValue={[0, 100]}
+                    /> */}
                   </div>
 
                   <div>

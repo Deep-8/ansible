@@ -1,8 +1,4 @@
-import { getCookie } from "@/utils/cookies";
-
-const role = getCookie("role");
-
-const sidebarItems = [
+export const sidebarItems = [
   {
     label: "Companies",
     key: "companies",
@@ -53,14 +49,3 @@ const sidebarItems = [
     path: "/dashboard/user",
   },
 ];
-
-export const sidebarElements = () => {
-  if (role === "1") {
-    return sidebarItems;
-  } else {
-    const filteredSidebar = sidebarItems.filter((each) => {
-      return !["user"].includes(each.key);
-    });
-    return filteredSidebar;
-  }
-};

@@ -24,10 +24,10 @@ const useProfileDetails = () => {
       retry: 1,
     }
   );
-
+  console.log("**", profileDetails);
   const getDetails = (profileDetails: any) => {
     const details = profileDetails?.data;
-
+    console.log("####", details);
     const createdDate = dateGenerator(details?.createdAt);
     const updatedDate = dateGenerator(details?.updatedAt);
     const viewData: any = {

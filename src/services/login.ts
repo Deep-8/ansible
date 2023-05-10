@@ -2,14 +2,12 @@ import { ApiConstants } from "@/constants/apiConstants";
 import { ILogin } from "@/interfaces/login";
 import { setCookie } from "@/utils/cookies";
 import { axiosInstance } from "@/utils/interceptor";
-import { useSession } from "next-auth/react";
 import Router from "next/router";
-import { useEffect } from "react";
 
-export const loginApi = (session: any) => {
+export const loginApi = (response: ILogin) => {
   return axiosInstance
     .post(ApiConstants.LOGIN, {
-      idToken: session.idToken,
+      idToken: response.credential,
     })
     .then(function (response) {
       if (response.status == 200) {

@@ -99,9 +99,7 @@ const AddRequirement = ({
             <Select
               allowClear={true}
               showSearch
-              disabled={
-                initialValues?.id || initialValues?.companyId ? true : false
-              }
+              disabled={initialValues?.id ? true : false}
               showArrow
               style={{ width: "100%", height: "40px" }}
               placeholder="Select company"

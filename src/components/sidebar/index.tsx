@@ -1,16 +1,10 @@
 import Image from "next/image";
-import React, { Fragment } from "react";
+import React from "react";
 import { Menu } from "antd";
 import useSidebar from "./views/useSidebar";
 const Sidebar = () => {
-  const {
-    items,
-    current,
-    isSidebarOpen,
-    setIsSidebarOpen,
-    onClickSidebar,
-    role,
-  } = useSidebar();
+  const { items, current, isSidebarOpen, setIsSidebarOpen, onClickSidebar } =
+    useSidebar();
   return (
     <aside
       className={`shadow-lg h-screen default-transition bg-white ${
